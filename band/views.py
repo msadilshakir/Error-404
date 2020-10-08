@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from .models import contactform
 # Create your views here.
 def base(request):
     return render(request,'base.html')
@@ -36,3 +37,16 @@ def logout(request):
 def user(request):
     return render(request,'user.html')
     
+def contactform1(request):
+    if request.method =='POST':
+        nm=request.POST['first_name']
+        em=request.POST['email']
+        com=request.POST['comments']
+        s=contactform(first_name=nm, email=em, comments=com)
+        s.save()
+        return redirect('/')
+    return redirect('/')
+        
+def table(request):
+    obj=contactform.objects.all()
+    return render(request,'table.html',{'obj':obj})

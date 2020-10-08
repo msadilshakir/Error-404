@@ -8,6 +8,15 @@
     <title>Error 404</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        $(document).ready(function () {
+            $('#dtDynamicVerticalScrollExample').DataTable({
+            "scrollY": "50vh",
+            "scrollCollapse": true,
+            });
+            $('.dataTables_length').addClass('bs-select');
+            });
+    </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -19,6 +28,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    
     
 
 
@@ -47,6 +57,7 @@
                         <li><a href="#band">BAND</a></li>
                         <li><a href="#tour">TOUR</a></li>
                         <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="/table">APPROACH</a></li>
                         <li><a href="/logout">LOGOUT</a></li>
                 {% else %}
                     <ul class="nav navbar-nav navbar-right">
@@ -71,18 +82,9 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-4">
-                
-                
-            </div>
-            <div class="col-xs-8">
                 {% block content %}
 
                 {% endblock %}
-            </div>
-
-        </div>
     </div>
 
 

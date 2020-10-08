@@ -1,0 +1,28 @@
+{% extends 'base1.html' %}
+{% block content %}
+
+{% if obj %}
+<div style="overflow-x:auto;">
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in obj %}
+      <tr>
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.first_name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.comments}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}
