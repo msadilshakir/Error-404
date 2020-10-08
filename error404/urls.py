@@ -18,6 +18,9 @@ from django.urls import path
 from band import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.base)
+    path('admin', views.admin, name='admin'),
+    path('', views.base, name='base'),
+    path('login', views.login, name='login'),
+    path('logout', views.logout, name='logout'),
+    path('user', views.user, name='user')
 ]
